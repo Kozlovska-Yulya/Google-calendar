@@ -20,11 +20,10 @@ const Modal = ({ isOpen, onCreateEvent, onClose }) => {
   };
 
   const handleCreateEvent = () => {
-    // Обработка создания события
     const newEvent = {
       title: eventData.title,
-      date: new Date(eventData.date), // Начальная дата события
-      endTime: new Date(eventData.date), // Конечная дата события (в тот же день)
+      date: new Date(eventData.date),
+      endTime: new Date(eventData.date), // Конечная дата события в тот же день)
       description: eventData.description,
     };
 

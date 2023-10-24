@@ -14,8 +14,7 @@ const Hour = ({ dataHour, hourEvents }) => {
           dateTo.getMinutes()
         )}`;
 
-        // Определите временной слот, в котором находится событие
-        const timeSlot = dateFrom.getHours(); // Используйте час начала события
+        const timeSlot = dateFrom.getHours();
 
         return (
           <Event
@@ -24,7 +23,7 @@ const Hour = ({ dataHour, hourEvents }) => {
             marginTop={dateFrom.getMinutes()}
             time={`${eventStart} - ${eventEnd}`}
             title={title}
-            timeSlot={timeSlot} // Передайте временной слот как проп
+            timeSlot={timeSlot}
           />
         );
       })}

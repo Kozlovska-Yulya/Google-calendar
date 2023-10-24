@@ -30,8 +30,8 @@ function App() {
   const handleCreateEvent = (eventData) => {
     const newEvent = {
       title: eventData.title,
-      dateFrom: eventData.date, // Используйте дату начала события
-      dateTo: eventData.endTime, // Используйте дату окончания события
+      dateFrom: eventData.date,
+      dateTo: eventData.endTime,
     };
 
     setEvents([...events, newEvent]);
@@ -40,18 +40,16 @@ function App() {
 
   const weekDates = generateWeekRange(getWeekStartDate(weekStartDate));
 
-  // Определяем месяц начала и конца отображаемой недели
   const startMonth = weekDates[0].getMonth();
   const endMonth = weekDates[weekDates.length - 1].getMonth();
 
-  // Определяем текст для отображения
   const displayedMonth =
     startMonth === endMonth
       ? weekDates[0].toLocaleString('en-us', { month: 'long' }) // Если неделя в одном месяце
       : `${weekDates[0].toLocaleString('en-us', {
           month: 'short',
         })}-${weekDates[weekDates.length - 1].toLocaleString('en-us', {
-          month: 'short',
+          month: 'short', // короткая запись, если два месяца
         })}`;
 
   return (
@@ -67,7 +65,7 @@ function App() {
       <Modal
         isOpen={isModalOpen}
         onCreateEvent={handleCreateEvent}
-        onClose={() => setIsModalOpen(false)} // Закрывает модальное окно при клике на кнопку "Close" в модальном окне
+        onClose={() => setIsModalOpen(false)}
       />
     </>
   );
