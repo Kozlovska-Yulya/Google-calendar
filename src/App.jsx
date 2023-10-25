@@ -35,6 +35,7 @@ function App() {
     };
 
     setEvents([...events, newEvent]);
+    console.log('Создано событие', newEvent);
     setIsModalOpen(false);
   };
 
