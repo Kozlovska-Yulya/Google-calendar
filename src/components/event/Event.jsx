@@ -9,10 +9,7 @@ const Event = ({ height, marginTop, title, time, timeSlot }) => {
   };
 
   return (
-    <div
-      style={eventStyle}
-      className={`event ${timeSlot === dataHour ? 'highlighted' : ''}`}
-    >
+    <div style={eventStyle} className={`event`}>
       <div className="event__title">{title}</div>
       <div className="event__time">{time}</div>
     </div>

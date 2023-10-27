@@ -6,7 +6,7 @@ import events from '../../gateway/events';
 import './calendar.scss';
 
 function Calendar(props) {
-  const [eventState, setEventState] = useState(events);
+  const [eventState] = useState(events);
 
   return (
     <section className="calendar">
@@ -14,7 +14,7 @@ function Calendar(props) {
       <div className="calendar__body">
         <div className="calendar__week-container">
           <Sidebar />
-          <Week weekDates={props.weekDates} events={eventState} />
+          <Week weekDates={props.weekDates} events={props.events} />
         </div>
       </div>
     </section>

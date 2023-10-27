@@ -28,14 +28,7 @@ function App() {
     setWeekStartDate(new Date());
   };
   const handleCreateEvent = (eventData) => {
-    const newEvent = {
-      title: eventData.title,
-      dateFrom: eventData.date,
-      dateTo: eventData.endTime,
-    };
-
-    setEvents([...events, newEvent]);
-    console.log('Создано событие', newEvent);
+    setEvents([...events, eventData]);
     setIsModalOpen(false);
   };
 
@@ -62,7 +55,7 @@ function App() {
         displayedMonth={displayedMonth}
         onAddEventClick={() => setIsModalOpen(true)} // Открывает модальное окно при клике на кнопку "Create"
       />
-      <Calendar weekDates={weekDates} />
+      <Calendar weekDates={weekDates} events={events} />
       <Modal
         isOpen={isModalOpen}
         onCreateEvent={handleCreateEvent}

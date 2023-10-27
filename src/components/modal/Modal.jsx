@@ -19,18 +19,19 @@ const Modal = ({ isOpen, onCreateEvent, onClose }) => {
     }));
   };
 
-  const handleCreateEvent = () => {
+  const handleCreateEvent = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
     const newEvent = {
-      title: eventData.title,
-      date: new Date(eventData.date),
-      endTime: new Date(eventData.date), // Конечная дата события в тот же день)
-      description: eventData.description,
+      id: Math.floor(Math.random() * 1000) + 1,
+      title: formData.get('title'),
+      description: formData.get('description'),
+      dateFrom: new Date(
+        formData.get('date') + 'T' + formData.get('startTime')
+      ),
+      dateTo: new Date(formData.get('date') + 'T' + formData.get('endTime')),
     };
-
-    // Вызываем функцию onCreateEvent и передаем в нее созданное событие
     onCreateEvent(newEvent);
-
-    // Закрываем модальное окно, вызывая функцию onClose
     onClose();
   };
 
