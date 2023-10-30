@@ -27,6 +27,7 @@ function App() {
   const handleTodayClick = () => {
     setWeekStartDate(new Date());
   };
+
   const handleCreateEvent = (eventData) => {
     setEvents([...events, eventData]);
     setIsModalOpen(false);
