@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/header/Header';
 import Calendar from './components/calendar/Calendar';
 import Modal from './components/modal/Modal';
+import { fetchEvents, onCreateTask } from './gateway/events';
 
 import { getWeekStartDate, generateWeekRange } from './utils/dateUtils.js';
 
@@ -11,6 +12,16 @@ function App() {
   const [weekStartDate, setWeekStartDate] = useState(new Date());
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    fetchEvents()
+      .then((data) => {
+        setEvents(data); // Установка полученных событий в состояние
+      })
+      .catch((error) => {
+        console.error('Ошибка при получении событий:', error);
+      });
+  }, []);
 
   const handleNextWeek = () => {
     const nextWeekStartDate = new Date(weekStartDate);
@@ -29,7 +40,7 @@ function App() {
   };
 
   const handleCreateEvent = (eventData) => {
-    setEvents([...events, eventData]);
+    onCreateTask(eventData);
     setIsModalOpen(false);
   };
 

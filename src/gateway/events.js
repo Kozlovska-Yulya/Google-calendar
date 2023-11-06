@@ -45,22 +45,22 @@ export const onDeleteTask = (id) =>
       return;
     });
 
-// const events = [
-//   {
-//     id: 1,
-//     title: 'breakfast',
-//     description: 'with mom',
-//     dateFrom: new Date(2023, 9, 28, 8, 30),
-//     dateTo: new Date(2023, 9, 28, 10, 30),
-//   },
+const events = [
+  {
+    id: 1,
+    title: 'breakfast',
+    description: 'with mom',
+    dateFrom: '2023-10-28T08:30:00.000Z',
+    dateTo: '2023-10-28T10:30:00.000Z',
+  },
 
-//   {
-//     id: 2,
-//     title: 'haircurt',
-//     description: '',
-//     dateFrom: new Date(2023, 9, 30, 10, 30),
-//     dateTo: new Date(2023, 9, 30, 12, 0),
-//   },
-// ];
+  {
+    id: 2,
+    title: 'haircurt',
+    description: '',
+    dateFrom: '2023-10-30T10:30:00.000Z',
+    dateTo: '2023-10-30T12:00:00.000Z',
+  },
+];
 
-// export default events;
+export default events;
