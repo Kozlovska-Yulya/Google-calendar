@@ -24,7 +24,7 @@ function Calendar(props) {
       <div className="calendar__body">
         <div className="calendar__week-container">
           <Sidebar />
-          <Week weekDates={props.weekDates} events={props.events} />
+          <Week weekDates={props.weekDates} events={events} />
         </div>
       </div>
     </section>

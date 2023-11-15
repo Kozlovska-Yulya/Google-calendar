@@ -58,8 +58,8 @@ const events = [
     id: 2,
     title: 'haircurt',
     description: '',
-    dateFrom: '2023-10-30T10:30:00.000Z',
-    dateTo: '2023-10-30T12:00:00.000Z',
+    dateFrom: '2023-11-17T10:30:00.000Z',
+    dateTo: '2023-11-17T12:00:00.000Z',
   },
 ];
 

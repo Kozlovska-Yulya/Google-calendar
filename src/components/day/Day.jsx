@@ -5,13 +5,14 @@ import './day.scss';
 
 const Day = ({ dataDay, dayEvents }) => {
   const [hourlyEvents, setHourlyEvents] = useState(Array(24).fill([]));
+  console.log('dayEvents', dayEvents);
 
   useEffect(() => {
     if (dayEvents.length > 0) {
       const newHourlyEvents = Array(24).fill([]);
 
       dayEvents.forEach((event) => {
-        const hour = event.dateFrom.getHours();
+        const hour = new Date(event.dateFrom).getHours();
         newHourlyEvents[hour] = [...newHourlyEvents[hour], event];
       });
 
