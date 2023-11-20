@@ -31,8 +31,8 @@ export const onCreateTask = (taskInfo) =>
       return;
     });
 
-export const onDeleteTask = (id) =>
-  fetch(`${baseUrl}/${id}`, {
+export const onDeleteTask = (taskId) =>
+  fetch(`${baseUrl}/${taskId}`, {
     method: 'DELETE',
   })
     .then((res) => {

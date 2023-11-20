@@ -1,17 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/header/Header';
 import Calendar from './components/calendar/Calendar';
 import Modal from './components/modal/Modal';
-import { onCreateTask } from './gateway/events';
-import events from './gateway/events';
+import { onCreateTask, onDeleteTask, fetchEvents } from './gateway/events';
 
 import { getWeekStartDate, generateWeekRange } from './utils/dateUtils.js';
-
 import './common.scss';
 
 function App() {
   const [weekStartDate, setWeekStartDate] = useState(new Date());
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    fetchEvents()
+      .then((data) => {
+        setEvents(data);
+      })
+      .catch((error) => {
+        console.error('Ошибка при получении событий:', error);
+      });
+  }, []);
 
   const handleNextWeek = () => {
     const nextWeekStartDate = new Date(weekStartDate);
@@ -30,8 +39,36 @@ function App() {
   };
 
   const handleCreateEvent = (eventData) => {
-    onCreateTask(eventData);
+    onCreateTask(eventData)
+      .then(() => {
+        fetchEvents()
+          .then((data) => {
+            setEvents(data);
+          })
+          .catch((error) => {
+            console.error('Ошибка при получении событий:', error);
+          });
+      })
+      .catch((error) => {
+        console.error('Ошибка при получении событий:', error);
+      });
     setIsModalOpen(false);
+  };
+
+  const handleDeleteEvent = (eventId) => {
+    onDeleteTask(eventId)
+      .then(() => {
+        fetchEvents()
+          .then((data) => {
+            setEvents(data);
+          })
+          .catch((error) => {
+            console.error('Ошибка при получении событий:', error);
+          });
+      })
+      .catch((error) => {
+        console.error('Ошибка при удалении события:', error);
+      });
   };
 
   const weekDates = generateWeekRange(getWeekStartDate(weekStartDate));
@@ -57,7 +94,11 @@ function App() {
         displayedMonth={displayedMonth}
         onAddEventClick={() => setIsModalOpen(true)} // Открывает модальное окно при клике на кнопку "Create"
       />
-      <Calendar weekDates={weekDates} events={events} />
+      <Calendar
+        weekDates={weekDates}
+        events={events}
+        handleDeleteEvent={handleDeleteEvent}
+      />
       <Modal
         isOpen={isModalOpen}
         onCreateEvent={handleCreateEvent}
