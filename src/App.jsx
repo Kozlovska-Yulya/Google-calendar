@@ -13,8 +13,10 @@ function App() {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
+    console.log('Компонент App отрендерен');
     fetchEvents()
       .then((data) => {
+        console.log('События после монтирования компонента:', data);
         setEvents(data);
       })
       .catch((error) => {
@@ -58,8 +60,11 @@ function App() {
   const handleDeleteEvent = (eventId) => {
     onDeleteTask(eventId)
       .then(() => {
+        console.log('Событие успешно удалено');
+        // Обновляем состояние событий после успешного удаления
         fetchEvents()
           .then((data) => {
+            console.log('События после обновления:', data);
             setEvents(data);
           })
           .catch((error) => {

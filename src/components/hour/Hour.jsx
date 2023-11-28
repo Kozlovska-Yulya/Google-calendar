@@ -3,8 +3,11 @@ import React from 'react';
 import Event from '../event/Event';
 import { formatMins } from '../../utils/dateUtils.js';
 
-const Hour = ({ dataHour, hourEvents }) => {
-  console.log('hourEvents', hourEvents);
+const Hour = ({ dataHour, hourEvents, handleDeleteEvent }) => {
+  const handleDelete = (eventId) => {
+    // Функция, которая будет вызываться при удалении события
+    handleDeleteEvent(eventId);
+  };
 
   return (
     <div className="calendar__time-slot" data-time={dataHour + 1}>
@@ -29,6 +32,7 @@ const Hour = ({ dataHour, hourEvents }) => {
             time={`${eventStart} - ${eventEnd}`}
             title={title}
             timeSlot={timeSlot}
+            onDelete={() => handleDelete(id)}
           />
         );
       })}

@@ -6,6 +6,7 @@ import Sidebar from '../sidebar/Sidebar';
 import './calendar.scss';
 
 function Calendar({ weekDates, events, handleDeleteEvent }) {
+  console.log('Пропс events в компоненте Calendar:', events);
   return (
     <section className="calendar">
       <Navigation weekDates={weekDates} />

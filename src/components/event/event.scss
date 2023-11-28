@@ -15,6 +15,10 @@
     margin-bottom: 8px;
   }
 
+  &__time {
+    position: relative;
+  }
+
   &:hover {
     font-weight: bold;
     background-color: red;
@@ -22,6 +26,17 @@
 }
 
 .delete-event-btn {
-  cursor: pointer;
+  position: absolute;
+  bottom: -15px;
+  right: -50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 20px;
   border: none;
+
+  background-color: white;
+  font-size: 13px;
+  cursor: pointer;
 }

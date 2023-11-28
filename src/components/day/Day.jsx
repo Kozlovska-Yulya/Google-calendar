@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Hour from '../hour/Hour';
 
-import './day.scss';
-
-const Day = ({ dataDay, dayEvents }) => {
+const Day = ({ dataDay, dayEvents, handleDeleteEvent }) => {
   const [hourlyEvents, setHourlyEvents] = useState(Array(24).fill([]));
-  console.log('dayEvents', dayEvents);
 
   useEffect(() => {
     if (dayEvents.length > 0) {
@@ -23,7 +20,12 @@ const Day = ({ dataDay, dayEvents }) => {
   return (
     <div className="calendar__day" data-day={dataDay}>
       {hourlyEvents.map((hourEvents, hour) => (
-        <Hour key={dataDay + hour} dataHour={hour} hourEvents={hourEvents} />
+        <Hour
+          key={dataDay + hour}
+          dataHour={hour}
+          hourEvents={hourEvents}
+          handleDeleteEvent={handleDeleteEvent}
+        />
       ))}
     </div>
   );
