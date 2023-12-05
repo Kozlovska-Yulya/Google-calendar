@@ -8,11 +8,14 @@
   color: #fff;
 
   &__title {
+    position: relative;
     width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    padding: 2px 0;
     margin-bottom: 8px;
+    border-bottom: 2px solid rgb(1, 1, 1);
   }
 
   &__time {
@@ -32,10 +35,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   height: 20px;
   border: none;
-
   background-color: white;
   font-size: 13px;
   cursor: pointer;

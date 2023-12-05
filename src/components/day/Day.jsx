@@ -5,16 +5,14 @@ const Day = ({ dataDay, dayEvents, handleDeleteEvent }) => {
   const [hourlyEvents, setHourlyEvents] = useState(Array(24).fill([]));
 
   useEffect(() => {
-    if (dayEvents.length > 0) {
-      const newHourlyEvents = Array(24).fill([]);
+    const newHourlyEvents = Array(24).fill([]);
 
-      dayEvents.forEach((event) => {
-        const hour = new Date(event.dateFrom).getHours();
-        newHourlyEvents[hour] = [...newHourlyEvents[hour], event];
-      });
+    dayEvents.forEach((event) => {
+      const hour = new Date(event.dateFrom).getHours();
+      newHourlyEvents[hour] = [...newHourlyEvents[hour], event];
+    });
 
-      setHourlyEvents(newHourlyEvents);
-    }
+    setHourlyEvents(newHourlyEvents);
   }, [dayEvents]);
 
   return (

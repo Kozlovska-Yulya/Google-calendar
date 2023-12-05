@@ -30,7 +30,6 @@ export const onCreateTask = (taskInfo) =>
       alert("Network Error! Can't create event.");
       return;
     });
-
 export const onDeleteTask = (taskId) =>
   fetch(`${baseUrl}/${taskId}`, {
     method: 'DELETE',
@@ -39,10 +38,12 @@ export const onDeleteTask = (taskId) =>
       if (!res.ok) {
         throw new Error('Network error');
       }
+      // Возвращаем информацию о успешном удалении
+      return 'Event deleted successfully';
     })
     .catch(() => {
       alert("Network Error! Can't delete event.");
-      return;
+      throw new Error("Can't delete event");
     });
 
 const events = [
