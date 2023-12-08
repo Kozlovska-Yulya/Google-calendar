@@ -38,7 +38,7 @@ export const onDeleteTask = (taskId) =>
       if (!res.ok) {
         throw new Error('Network error');
       }
-      // Возвращаем информацию о успешном удалении
+
       return 'Event deleted successfully';
     })
     .catch(() => {

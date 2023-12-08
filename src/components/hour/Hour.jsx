@@ -5,7 +5,6 @@ import { formatMins } from '../../utils/dateUtils.js';
 
 const Hour = ({ dataHour, hourEvents, handleDeleteEvent }) => {
   const handleDelete = (eventId) => {
-    // Функция, которая будет вызываться при удалении события
     handleDeleteEvent(eventId);
   };
 

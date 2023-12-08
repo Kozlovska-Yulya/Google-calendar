@@ -2,6 +2,7 @@ import React from 'react';
 import Day from '../day/Day';
 
 import './week.scss';
+
 const Week = ({ weekDates, events, handleDeleteEvent }) => {
   return (
     <div className="calendar__week">
@@ -11,7 +12,6 @@ const Week = ({ weekDates, events, handleDeleteEvent }) => {
           dayStart.getHours() + 24
         );
 
-        //getting all events from the day we will render
         const dayEvents = events.filter(
           (event) =>
             new Date(event.dateFrom).getTime() > formattedDayStart &&

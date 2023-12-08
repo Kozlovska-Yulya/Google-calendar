@@ -78,11 +78,11 @@ function App() {
 
   const displayedMonth =
     startMonth === endMonth
-      ? weekDates[0].toLocaleString('en-us', { month: 'long' }) // Если неделя в одном месяце
+      ? weekDates[0].toLocaleString('en-us', { month: 'long' })
       : `${weekDates[0].toLocaleString('en-us', {
           month: 'short',
         })}-${weekDates[weekDates.length - 1].toLocaleString('en-us', {
-          month: 'short', // короткая запись, если два месяца
+          month: 'short',
         })}`;
 
   return (
@@ -92,7 +92,7 @@ function App() {
         onWeekPrev={handlePrevWeek}
         onTodayClick={handleTodayClick}
         displayedMonth={displayedMonth}
-        onAddEventClick={() => setIsModalOpen(true)} // Открывает модальное окно при клике на кнопку "Create"
+        onAddEventClick={() => setIsModalOpen(true)}
       />
       <Calendar
         weekDates={weekDates}
