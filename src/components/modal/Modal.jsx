@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-
 import './modal.scss';
+import PropTypes from 'prop-types';
 
 const Modal = ({ isOpen, onCreateEvent, onClose }) => {
   const [eventData, setEventData] = useState({
@@ -95,3 +95,9 @@ const Modal = ({ isOpen, onCreateEvent, onClose }) => {
 };
 
 export default Modal;
+
+Modal.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onCreateEvent: PropTypes.func.isRequired,
+  onClose: PropTypes.func.isRequired,
+};

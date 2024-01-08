@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Hour from '../hour/Hour';
+import PropTypes from 'prop-types';
 
 const Day = ({ dataDay, dayEvents, handleDeleteEvent }) => {
   const [hourlyEvents, setHourlyEvents] = useState(Array(24).fill([]));
@@ -30,3 +31,9 @@ const Day = ({ dataDay, dayEvents, handleDeleteEvent }) => {
 };
 
 export default Day;
+
+Day.propTypes = {
+  dataDay: PropTypes.number.isRequired,
+  dayEvents: PropTypes.array.isRequired,
+  handleDeleteEvent: PropTypes.func.isRequired,
+};

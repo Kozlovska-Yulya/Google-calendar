@@ -1,6 +1,6 @@
 import React from 'react';
-
 import './header.scss';
+import PropTypes from 'prop-types';
 
 const Header = ({
   onWeekNext,
@@ -37,3 +37,11 @@ const Header = ({
 };
 
 export default Header;
+
+Header.propTypes = {
+  onWeekNext: PropTypes.func.isRequired,
+  onWeekPrev: PropTypes.func.isRequired,
+  onTodayClick: PropTypes.func.isRequired,
+  displayedMonth: PropTypes.string.isRequired,
+  onAddEventClick: PropTypes.func.isRequired,
+};
