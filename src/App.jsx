@@ -99,11 +99,12 @@ function App() {
         events={events}
         handleDeleteEvent={handleDeleteEvent}
       />
-      <Modal
-        isOpen={isModalOpen}
-        onCreateEvent={handleCreateEvent}
-        onClose={() => setIsModalOpen(false)}
-      />
+      {isModalOpen && (
+        <Modal
+          onCreateEvent={handleCreateEvent}
+          onClose={() => setIsModalOpen(false)}
+        />
+      )}
     </>
   );
 }

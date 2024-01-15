@@ -45,23 +45,3 @@ export const onDeleteTask = (taskId) =>
       alert("Network Error! Can't delete event.");
       throw new Error("Can't delete event");
     });
-
-const events = [
-  {
-    id: 1,
-    title: 'breakfast',
-    description: 'with mom',
-    dateFrom: '2023-10-28T08:30:00.000Z',
-    dateTo: '2023-10-28T10:30:00.000Z',
-  },
-
-  {
-    id: 2,
-    title: 'haircurt',
-    description: '',
-    dateFrom: '2023-11-17T10:30:00.000Z',
-    dateTo: '2023-11-17T12:00:00.000Z',
-  },
-];
-
-export default events;
