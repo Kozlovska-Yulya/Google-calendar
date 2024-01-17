@@ -1,7 +1,7 @@
 Project. Google-calendar
 
 Description:
-Этот проект - клон Google Календаря, разработанный с использованием React, HTML5, CSS3 и SASS. Он позволяет пользователям просматривать календарь, добавлять и удалять события.
+Цей проект – клон Google Календаря, розроблений з використанням React, HTML5, CSS3 та SASS. Він дозволяє користувачам переглядати календар, додавати та видаляти події.
 
 [Site link](https://phenomenal-sunflower-b58729.netlify.app/)
 
@@ -15,7 +15,7 @@ The tech stack is:
 
 Installation:
 
-Клонируйте репозиторий и установите зависимости:
+Клонуйте репозиторій та встановіть залежності:
 
 ```bash
 • git clone https://github.com/Kozlovska-Yulya/Google-calendar
