@@ -15,10 +15,7 @@ The tech stack is:
 - React
 
 Author:
-Kozlovska Yuliia
-Gmail: kozlovskayayulya2@gmail.com
-Facebook link: https://www.facebook.com/profile.php?id=100012453605455
 
-```
-
-```
+- Kozlovska Yuliia
+- Gmail: kozlovskayayulya2@gmail.com
+- Facebook link: https://www.facebook.com/profile.php?id=100012453605455
