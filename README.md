@@ -4,7 +4,7 @@ Description:
 
 This project is a Google Calendar clone developed using React, HTML5, CSS3 and SASS. It allows users to view the calendar, add and delete events.
 
-[Site link](https://phenomenal-sunflower-b58729.netlify.app/)
+[Google-calendar](https://phenomenal-sunflower-b58729.netlify.app/)
 
 The tech stack is:
 
