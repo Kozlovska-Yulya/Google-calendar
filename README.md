@@ -12,6 +12,7 @@ The tech stack is:
 - CSS3
 - SASS (Scss)
 - BEM methodology
+- Javascript (ES6)
 - React
 
 Author:
