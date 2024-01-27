@@ -1,0 +1,38 @@
+.event {
+  position: absolute;
+  width: 80%;
+  background-color: cornflowerblue;
+  z-index: 1;
+  border-radius: 8px;
+  padding: 8px;
+  color: #fff;
+}
+.event__title {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 2px 0;
+}
+.event__time {
+  position: relative;
+}
+.event:hover {
+  font-weight: bold;
+  background-color: red;
+}
+
+.delete-event-btn {
+  position: absolute;
+  bottom: -35px;
+  right: -50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  border: none;
+  background-color: white;
+  font-size: 13px;
+  cursor: pointer;
+}/*# sourceMappingURL=event.css.map */
