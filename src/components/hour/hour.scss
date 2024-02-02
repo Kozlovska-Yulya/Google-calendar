@@ -6,10 +6,10 @@
   &__time-slot {
     height: 59px;
     position: relative;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid rgb(238, 238, 238);
 
     &.highlighted {
-      background-color: blue;
+      background-color: rgb(0, 0, 255);
     }
   }
 }

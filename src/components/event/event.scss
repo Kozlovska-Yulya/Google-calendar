@@ -1,11 +1,11 @@
 .event {
   position: absolute;
   width: 80%;
-  background-color: cornflowerblue;
+  background-color: rgba(9, 122, 235, 0.694);
   z-index: 1;
   border-radius: 8px;
   padding: 8px;
-  color: #fff;
+  color: rgb(255, 255, 255);
 
   &__title {
     position: relative;
@@ -22,7 +22,7 @@
 
   &:hover {
     font-weight: bold;
-    background-color: red;
+    background-color: rgb(255, 0, 0);
   }
 }
 
@@ -35,7 +35,7 @@
   align-items: center;
   height: 40px;
   border: none;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   font-size: 13px;
   cursor: pointer;
 }

@@ -5,9 +5,9 @@
   align-items: center;
 
   &__content {
-    background: #fff;
+    background: rgb(255, 255, 255);
     padding: 16px;
-    border: 1px solid #ccc;
+    border: 1px solid rgb(204, 204, 204);
     border-radius: 8px;
   }
 }
@@ -18,7 +18,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #cccccc45;
+  background-color: rgba(204, 204, 204, 0.271);
   z-index: 10;
 }
 
@@ -52,8 +52,8 @@
     margin: 8px;
     margin-left: auto;
     border: none;
-    color: #fff;
-    background-color: cornflowerblue;
+    color: rgb(255, 255, 255);
+    background-color: rgba(9, 122, 235, 0.694);
     border: none;
     padding: 8px 16px;
     border-radius: 8px;

@@ -3,12 +3,12 @@
   height: 60px;
   padding: 0 48px;
   align-items: center;
-  background-color: bisque;
+  background-color: rgb(221, 217, 217);
 }
 
 .create-event-btn {
   padding: 0 16px;
-  background-color: coral;
+  background-color: rgba(9, 122, 235, 0.694);
 
   &__icon {
     margin-right: 8px;
@@ -19,7 +19,7 @@
   &__today-btn {
     margin-left: 32px;
     padding: 0 16px;
-    background-color: coral;
+    background-color: rgba(9, 122, 235, 0.694);
   }
 
   &__nav-icon {
